@@ -3,6 +3,15 @@
 #include <iomanip>
 #include<locale.h>
 using namespace std;
+//Programa para calculo de componetes para criação de hardwares
+
+
+
+
+
+
+// ci-555 astavel
+//calcular o valor do capacitor para obter a frequencia desejada
 void freq() {
     float frequencia;
     float capacitor;
@@ -21,6 +30,8 @@ void freq() {
     cout << left << setw(10) << "10 Ohms " << setw(10) << "10 Ohms  " << endl;
     cout << "Capacitor: " << capacitor << " µF" << endl;
 }
+
+//calcular o valor do capacitor para obter o nivel alto desejado
 void calcDutyCicle() {
     float na, C1;
 
@@ -36,9 +47,9 @@ void calcDutyCicle() {
     cout << left << setw(10) << "Resistor 1 " << setw(10) << "Resistor 2 " << endl;
     cout << left << setw(10) << "10 Ohms " << setw(10) << "10 Ohms  " << endl;
     cout << "O valor do capacitor (C1) necessário é: " << C1 << " µF" <<endl;
-
-
 }
+
+//calcular o valor do capacitor para obter a frequencia 
 void calctempofrequencia() {
     system("cls");
 float tempo;
@@ -51,6 +62,8 @@ float frequencia;
     cout << "A frequencia e de: " << frequencia << " Hz" << endl;
     return;
 }
+
+//calcular a frequencia desejada passando o r1,r2 e capacitor
 void calcfreque() {
     system("cls");
     float resistor1;
@@ -74,23 +87,8 @@ void calcfreque() {
     cout << "A frequencia e de: " << frequencia << " Hz" << endl;
     return;
 }
-/*
-float frequencia;
-	float capacitor;
-	float aux;
+//fim ci-555 astavael
 
-	system("cls");
-	cout << "==============Encontrar a frequência desejada==============" << endl;
-	cout << "Por favor informe a frequencia que você deseja encontrar" << endl;
-	//cout << "Notas: Usaremos valores fixos nos resistores sendo:" << endl;
-	cin >> frequencia;
-	aux= (30000 * frequencia);
-	capacitor = 1.44 / aux;
-	cout << "Os valores dos componetes serão" << endl;
-	cout << left << setw(10) << "Resistor 1 " << setw(10) << " Resistor 2 " << endl;
-	cout << left << setw(10) << "10 Ohms " << setw(10) << " 10 Ohms  "<< endl;
-	cout << "Capacitor: " << capacitor << endl;
-*/
 int main() {
     setlocale(LC_ALL, "pt_BR.UTF-8");
     int option = NULL;
@@ -99,7 +97,7 @@ int main() {
     cout << "PROGRAMA CALCULOS DE COMPONENTES ELETRÔNICOS PARA DESENVOLVIMENTO DE HARDWARE" << endl;
     cout << "=============================================================================" << endl;
     cout << "Calcular componentes para o circuito ci-555 astável [1]" << endl;
-    cout << "Calcular frequência utilizando o periodo [2]" << endl;
+    cout << "Calcular frequência utilizando o período [2]" << endl;
     cout << "Sair [0]" << endl;
     cin >> option;
 
@@ -108,7 +106,7 @@ int main() {
     case 1:
         cout << endl;
         cout << "=============================================================================" << endl;
-        cout << "PROGRAMA CALCULOS DE COMPONENTES ci-555 astável" << endl;
+        cout << "PROGRAMA CALCULOS DE COMPONENTES CI-555 ASTÁVEL" << endl;
         cout << "Calcular a frequência desejada [1]" << endl;
         cout << "Calcular o Duty Cycle [2]" << endl;
         cout << "Calcular a onda quadrada [3]" << endl;
@@ -123,11 +121,13 @@ int main() {
         case 2:
             calcDutyCicle();
                 break;
+        case 3:
+            cout << "Para ondas quadradas utilizar valores abaixo de 10 k Ohms e 10 µF" << endl;
         case 4:
             calcfreque();
                 break;
         }
-        break; // Adicione o break aqui para sair do primeiro switch
+        break; 
     case 2:
         calctempofrequencia();
             cin >> pausa;
