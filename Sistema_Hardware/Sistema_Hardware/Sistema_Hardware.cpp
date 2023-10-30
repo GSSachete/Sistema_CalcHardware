@@ -2,7 +2,9 @@
 #include <iostream>
 #include<locale.h>
 using namespace std;
+void freq() {
 
+}
 int main()
 {
 	setlocale(LC_ALL, "pt_BR.UTF-8");
